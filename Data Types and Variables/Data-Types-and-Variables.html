@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,38 +9,40 @@
 	<!--01. Assign all the possible JavaScript literals to different variables. -->
 	<!--02. Create a string variable with quoted text in it. -->
 	<!--03. Try typeof on all variables you created -->
-	<!--04. Create null, undefined variables and try typeof on them.
--->
+	<!--04. Create null, undefined variables and try typeof on them.-->
 	<div id="js-console"></div>
 	<script src="scripts/js-console.js"></script>		      
 	<script>
 		// boolean literals
-		var boolLiteral1 = false;
-		var boolLiteral2 = true;
+		var boolLiteral1 = false,
+		    boolLiteral2 = true;
 
-		jsConsole.writeLine("Boolean literal: " + (boolLiteral1 == boolLiteral2)); // false
-		jsConsole.writeLine("Boolean literal: " + (boolLiteral1 != boolLiteral2)); // true
+		jsConsole.writeLine("Boolean literal: " + (boolLiteral1 === boolLiteral2)); // false
+		jsConsole.writeLine("Boolean literal: " + (boolLiteral1 !== boolLiteral2)); // true
 		jsConsole.writeLine(typeof (boolLiteral1));
 
 		// integer literals - decimal, octal and hexadecimal numeral system
-		var myDecInt = 5; // decimal integer number
-		var myOctInt = 015; // Leading 0 (zero) on an integer literal indicates it is in octal. Octal integers can include only the digits 0-7.
-		var myHexInt = 0xF1A7 // Leading 0x (or 0X) indicates hexadecimal. Hexadecimal integers can include digits (0-9) and the letters a-f and A-F.
+		var myDecInt = 5, 
+		    myOctInt = 015, 
+		    myHexInt = 0xF1A7; 
 
 		jsConsole.writeLine("Decimal integer: " + myDecInt);
 		jsConsole.writeLine(typeof (myDecInt));
 
 		jsConsole.writeLine("Octal integer: " + myOctInt);
-		jsconsole.writeline(typeof (myoctint));
+		jsConsole.writeLine(typeof (myoctint));
 
 		jsConsole.writeLine("Hex integer: " + myHexInt);
 		jsConsole.writeLine(typeof (myHexInt));
 
 		// floating-point
 		var myFloat = 0.53456;
+
 		myFloat = .53456; // also valid syntax
-		myFloat = 22/7; // do not forget about the rounding of floating-point numbers
+		myFloat = 22 / 7; // do not forget about the rounding of floating-point numbers
+
 		jsConsole.writeLine("floating-point literal: " + myFloat);
+
 		jsConsole.writeLine(typeof (myFloat));
 
 		// array literals
@@ -48,25 +50,28 @@
 		
 		jsConsole.writeLine("Top beer: " + beers[0]);
 		jsConsole.writeLine("4th element of the array is: " + beers[3]);
-		jsConsole.writeLine("Taka a bottle of " + beers[4]);
+		jsConsole.writeLine("Take a bottle of " + beers[4]);
 		jsConsole.writeLine("Last beer is: " + beers[5]);
 
 		var appetizer = [/*intentionally left blank*/, "nuts", , "beer-nuts"];
+
 		jsConsole.writeLine("Drinking beer with " + appetizer[0]);
 		jsConsole.writeLine("Drinking beer with " + appetizer[1]);
 		jsConsole.writeLine("Drinking beer with " + appetizer[2]);
 		jsConsole.writeLine("Drinking beer with " + appetizer[3]);
+
 		jsConsole.writeLine(typeof (beers));
 		jsConsole.writeLine(typeof (appetizer));
 
 		// string literals
-		var str1 = "Just a bloody string!";
-		var str2 = 'Another way to write a bloody string';
-		var str3 = 'If I want to put an id="bloody-id" in some element';
+		var str1 = "Just a bloody string!",
+	        str2 = 'Another way to write a bloody string',
+	        str3 = 'If I want to put an id="bloody-id" in some element';
 
 		jsConsole.writeLine(str1);
 		jsConsole.writeLine(str2);
 		jsConsole.writeLine(str3);
+
 		jsConsole.writeLine(typeof (str1));
 	
 		// escaping string literals
