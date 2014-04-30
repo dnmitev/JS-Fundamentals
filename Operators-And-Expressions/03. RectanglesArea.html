@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Operators and Expressions in JS</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        #number {
+            border: 1px solid black;
+            padding: 5px 15px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius:5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+	<header>
+        <p>
+            03. Write an expression that calculates rectangle’s area by given width and height.
+        </p>
+    </header>
+    <label for="width">Rectangle's width: </label>
+    <input type="text" id="width">
+    <br/>
+    <label for="height">Rectangle's height: </label>
+    <input type="text" id="height">
+    <br/>
+    <a href="#" onclick="onFindArea()">Find Area</a>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function onFindArea() {
+    		var width = jsConsole.readFloat("#width"),
+    			height = jsConsole.readFloat("#height"),
+    			area = width * height;
+
+    			jsConsole.writeLine("Area: " + width + " x " + height + " = " + area);
+        }
+    </script>
+</body>
+</html>

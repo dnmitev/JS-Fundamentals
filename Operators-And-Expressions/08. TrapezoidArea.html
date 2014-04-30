@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators and Expressions in JS</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        #number {
+            border: 1px solid black;
+            padding: 5px 15px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius:5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            08. Write an expression that calculates trapezoid's area by given sides a and b and height h
+        </p>
+    </header>
+    <label for="tb-a">a: </label>
+    <input type="text" id="tb-a" />
+    <br />
+    <label for="tb-b">b: </label>
+    <input type="text" id="tb-b" />
+    <br />
+    <label for="tb-h">h: </label>
+    <input type="text" id="tb-h" />
+    <br />
+    <a href="#" onclick="onGetArea()">Get Area</a>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function onGetArea() {
+            var a = parseFloat(document.getElementById("tb-a").value),
+                b = parseFloat(document.getElementById("tb-b").value),
+                h = parseFloat(document.getElementById("tb-h").value),
+                area = (a+b) * h * 0.5;
+
+            jsConsole.writeLine("Trapezoid's area is " + area);
+        }
+    </script>
+</body>
+</html>

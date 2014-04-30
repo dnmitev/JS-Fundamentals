@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8"/>
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        #number {
+            border: 1px solid black;
+            padding: 5px 15px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            01. Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+        </p>
+    </header>
+    <label for="tb-first-number">First number: </label>
+    <input type="text" id="tb-first-number" />
+    <br />
+    <label for="tb-second-number">Second number: </label>
+    <input type="text" id="tb-second-number" />
+    <br />
+    <a href="#" onclick="onTryToExchange()">Try to exchange</a>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onTryToExchange() {
+            var first = jsConsole.readFloat("#tb-first-number"),
+                second = jsConsole.readFloat("#tb-second-number"),
+                temp;
+
+            if (first > second) {
+                jsConsole.writeLine(first + " > " + second);
+                temp = first;
+                first = second;
+                second = temp;
+            } else {
+                jsConsole.writeLine(first + " < " + second);
+            }
+
+            jsConsole.writeLine("First number: " + first);
+            jsConsole.writeLine("Second number: " + second);
+        }
+    </script>
+</body>
+</html>

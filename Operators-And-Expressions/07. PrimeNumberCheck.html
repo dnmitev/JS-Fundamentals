@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators and Expressions in JS</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        #number {
+            border: 1px solid black;
+            padding: 5px 15px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius:5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            07. Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime
+        </p>
+    </header>
+    <label for="tb-number">Number: </label>
+    <input type="text" id="tb-number" />
+    <br />
+    <a href="#" onclick="onFindIsPrime()">Is prime?</a>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function onFindIsPrime() {
+            var number = document.getElementById("tb-number").value,
+                isPrime = true,
+                result;
+
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+                    if (parseInt(number % i) === 0) {
+                        isPrime = false;
+                        break;
+                    };
+            };
+
+            result = isPrime ? "prime" : "not prime";
+
+            jsConsole.writeLine(number + " is " + result);
+        }
+    </script>
+</body>
+</html>
