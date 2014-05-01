@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input {
+            border: 1px solid black;
+            padding: 5px 15px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        header p span {
+            vertical-align: super;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            06. Write a script that enters the coefficients a, b and c of a quadratic equation and calculates and prints its real roots.
+            Note that quadratic equations may have 0, 1 or 2 real roots.
+        </p>
+        <p>
+            ax<span>2</span> + bx + c = 0
+        </p>
+    </header>
+    <label for="tb-a">a: </label>
+    <input type="text" id="tb-a" />
+    <br />
+    <label for="tb-b">b: </label>
+    <input type="text" id="tb-b" />
+    <br />
+    <label for="tb-c">c: </label>
+    <input type="text" id="tb-c" />
+    <br />
+    <a href="#" onclick="onSolveQuadraticEquation()">Solve equation!</a>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onSolveQuadraticEquation() {
+            var a = jsConsole.readFloat("#tb-a"),
+                b = jsConsole.readFloat("#tb-b"),
+                c = jsConsole.readFloat("#tb-c"),
+                discriminant;
+
+            discriminant = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
+
+            if (discriminant > 0) {
+                jsConsole.writeLine("x1=" + ((-b + discriminant) / (2 * a)));
+                jsConsole.writeLine("x2=" + ((-b - discriminant) / (2 * a)));
+            } else if (discriminant === 0) {
+                jsConsole.writeLine("x1=x2=" + ((-b) / (2 * a)));
+            } else {
+                jsConsole.writeLine("The following equation has no real roots.");
+            }
+        }
+    </script>
+</body>
+</html>

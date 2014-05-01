@@ -44,6 +44,21 @@
 			var text = self.read(inputSelector);
 			return parseFloat(text);
 		}
+		
+		self.readArray = function readArray(inputSelector,separator) {
+			var text = self.read(inputSelector);
+			var array = text.split(separator);
+			return array;
+		}
+
+		self.readNumbersArray = function readNumbersArray(inputSelector, separator) {
+			var array = self.readArray(inputSelector, separator);
+			var numbers = new Array(array.length);
+			for (var i = 0; i < array.length; i++) {
+				numbers[i] = parseFloat(array[i]);
+			}
+			return numbers;
+		}
 
 		return self;
 	}

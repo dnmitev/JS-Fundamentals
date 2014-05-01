@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Conditional Statements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input {
+            border: 1px solid black;
+            padding: 5px 15px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            08. Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.
+        </p>
+        <p class="examples">
+            0 -> 'Zero'
+            273 -> 'Two hundred seventy three'
+            400 -> 'Four hundred'
+            501 -> 'Five hundred and one'
+            711 -> 'Seven hundred and eleven'
+        </p>
+    </header>
+    <label for="tb-number">Number[1;999]: </label>
+    <input type="text" id="tb-number" />
+    <br />
+    <a href="#" onclick="onNameTheNumber()">Name The Number!</a>
+    <div id="console">
+    </div>
+    <script src="scripts/js-console.js">
+    </script>
+    <script>
+        function onNameTheNumber() {
+            var number = jsConsole.readInteger("#tb-number"),
+                specials = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+                    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"],
+                tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"],
+                units = parseInt(number % 10),
+                decimals = parseInt((number / 10) % 10),
+                hundreds = parseInt(number / 100);
+
+            if (number <= 19) {
+                jsConsole.writeLine(number + "->" + specials[number]);
+            } else {
+                if (number < 100) {
+                    if (units === 0) {
+                        jsConsole.writeLine(number + "->" + tens[decimals - 2]);
+                    } else {
+                        jsConsole.writeLine(number + "->" + tens[decimals - 2] + " " + specials[units]);
+                    }
+                } else {
+                    if (units !== 0) {
+                        if (decimals > 1) {
+                            jsConsole.writeLine(number + "->" + specials[hundreds] + " hundred and " + tens[decimals - 2] + " " + specials[units]);
+                        } else {
+                            jsConsole.writeLine(number + "->" + specials[hundreds] + " hundred and " + specials[parseInt(number % 100)]);
+                        }
+                    } else {
+                        jsConsole.writeLine(number + "->" + specials[hundreds] + " hundred and " + tens[decimals - 2]);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

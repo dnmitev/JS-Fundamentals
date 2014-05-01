@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Conditional Statements</title>
     <link href="styles/js-console.css" rel="stylesheet" />
     <style>
@@ -41,36 +41,33 @@
 <body>
     <header>
         <p>
-            01. Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+            05. Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
         </p>
     </header>
-    <label for="tb-first-number">First number: </label>
-    <input type="text" id="tb-first-number" />
+    <label for="tb-number">First number: </label>
+    <input type="text" id="tb-number" />
     <br />
-    <label for="tb-second-number">Second number: </label>
-    <input type="text" id="tb-second-number" />
-    <br />
-    <a href="#" onclick="onTryToExchange()">Try to exchange</a>
+    <a href="#" onclick="onNameTheDigit()">Name The Digit!</a>
     <div id="console">
     </div>
     <script src="scripts/js-console.js"></script>
     <script>
-        function onTryToExchange() {
-            var first = jsConsole.readFloat("#tb-first-number"),
-                second = jsConsole.readFloat("#tb-second-number"),
-                temp;
+        function onNameTheDigit() {
+            var digit = jsConsole.readInteger("#tb-number");
 
-            if (first > second) {
-                jsConsole.writeLine(first + " > " + second);
-                temp = first;
-                first = second;
-                second = temp;
-            } else {
-                jsConsole.writeLine(first + " < " + second);
+            switch (digit) {
+                case 0: jsConsole.writeLine("zero"); break;
+                case 1: jsConsole.writeLine("one"); break;
+                case 2: jsConsole.writeLine("two"); break;
+                case 3: jsConsole.writeLine("three"); break;
+                case 4: jsConsole.writeLine("four"); break;
+                case 5: jsConsole.writeLine("five"); break;
+                case 6: jsConsole.writeLine("six"); break;
+                case 7: jsConsole.writeLine("seven"); break;
+                case 8: jsConsole.writeLine("eight"); break;
+                case 9: jsConsole.writeLine("nine"); break;
+                default: jsConsole.writeLine("Not a valid digit!"); break;
             }
-
-            jsConsole.writeLine("First number: " + first);
-            jsConsole.writeLine("Second number: " + second);
         }
     </script>
 </body>
