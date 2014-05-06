@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <p>
+            02. Write a script that compares two char arrays lexicographically (letter by letter)..
+        </p>
+    </header>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var firstArr = [2,3,1,7,"b","m"],
+            secondArr = ["a", "2", "b", 2,3,1],
+            areEqual = true,
+            index;
+
+        for (index = 0; index < firstArr.length; index++) {
+            if (firstArr[index] !== secondArr[index]) {
+                areEqual = false;
+                break;
+            }
+        }
+
+        jsConsole.writeLine("Two arrays are lexicographically equal is " + areEqual);
+    </script>
+</body>
+</html>

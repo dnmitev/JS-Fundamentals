@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Arrays</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <p>
+            06 .Write a program that finds the most frequent number in an array. 
+        </p>
+        <p>
+            Example: {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3} -> 4 (5 times)
+        </p>
+    </header>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var arr = new Array(20),
+            maxCount = 0,
+            currentCount,
+            target;
+
+        // assign the unsorted array with random values
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = parseInt(Math.random() * 10);
+        }
+
+        // print the unsorted array on the console
+        jsConsole.writeLine("Before sorting: " + arr.join("|"));
+
+        // look up for the most frequent element in the array
+        for (var i = 0; i < arr.length - 1; i++) {
+            currentCount = 0;
+
+            for (var j = 0; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    currentCount++;
+                }
+            }
+
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                target = arr[i];
+            }
+        }
+
+        // result
+        jsConsole.writeLine("Most frequent elements is: " + target + " (" + maxCount + " times)");
+    </script>
+</body>
+</html>

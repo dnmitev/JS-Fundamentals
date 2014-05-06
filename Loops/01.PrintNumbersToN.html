@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Loops</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input {
+            border: 1px solid black;
+            padding: 5px 15px;
+            font-family: Consolas;
+            margin-bottom: 5px;
+        }
+
+        header > p {
+            color: black;
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-weight: bold;
+            background-color: lightslategray;
+        }
+
+        a {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            01. Write a script that prints all the numbers from 1 to N.
+        </p>
+    </header>
+    <label for="tb-number">N: </label>
+    <input id="tb-number" type="text" class="js-console-input" />
+    <a href="#" class="js-console-btn" onclick="onPrintNumbers()">Print numbers!</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onPrintNumbers() {
+            var n = jsConsole.readInteger("#tb-number"),
+                i;
+
+            for (i = 1; i <= n; i++) {
+                jsConsole.write(i + " ");
+            }
+        }
+    </script>
+</body>
+</html>
