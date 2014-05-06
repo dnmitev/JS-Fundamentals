@@ -39,33 +39,48 @@
 <body>
     <header>
         <p>
-            03. Write a script that finds the max and min number from a sequence of numbers
+            04. Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects.
         </p>
     </header>
-    <label for="tb-numbers">Enter numbers, separated by comma ",": </label>
-    <input id="tb-numbers" type="text" class="js-console-input" />
-    <a href="#" class="js-console-btn" onclick="onFindNumbers()">Find numbers!</a>
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        function onFindNumbers() {
-            var numbers = jsConsole.readNumbersArray("#tb-numbers", ","),
-                max = numbers[0],
-                min = numbers[0];
+        var documentElements = document.getElementsByTagName("*"),
+            max = documentElements[0].tagName,
+            min = documentElements[0].tagName;
 
-            for (var i = 1; i < numbers.length; i++) {
-                if (max < numbers[i]) {
-                    max = numbers[i];
-                }
-
-                if (min > numbers[i]) {
-                    min = numbers[i];
-                }
+        for (var i = 1; i < documentElements.length; i++) {
+            if (max < documentElements[i].tagName) {
+                max = documentElements[i].tagName;
             }
 
-            jsConsole.writeLine("Max: " + max);
-            jsConsole.writeLine("Min: " + min);
+            if (min > documentElements[i].tagName) {
+                min = documentElements[i].tagName;
+            }
         }
+
+        for (var prop in window) {
+            if (prop > max) {
+                max = prop;
+            }
+
+            if (prop < min) {
+                min = prop;
+            }
+        }
+
+        for (var prop in navigator) {
+            if (prop > max) {
+                max = prop;
+            }
+
+            if (prop < min) {
+                min = prop;
+            }
+        }
+
+        jsConsole.writeLine("The max element is " + max);
+        jsConsole.writeLine("The min element is " + min);
     </script>
 </body>
 </html>
