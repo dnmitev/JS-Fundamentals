@@ -15,14 +15,18 @@
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        var arr = new Array(20),
-            i;
-
-        for (i = 0; i < arr.length; i++) {
-            arr[i] = i * 5;
-        }
-
-        jsConsole.writeLine(arr.join("|"));
+		(function () {
+			"use strict";
+			
+			var arr = new Array(20),
+				i;
+	
+			for (i = 0, len = arr.length; i < len; i++) {
+				arr[i] = i * 5;
+			}
+	
+			jsConsole.writeLine(arr.join("|"));
+		}) ();
     </script>
 </body>
 </html>

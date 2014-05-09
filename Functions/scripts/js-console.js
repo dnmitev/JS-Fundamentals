@@ -64,5 +64,6 @@
 
         return self;
     }
+
     jsConsole = new createJsConsole("#js-console");
 }).call(this);

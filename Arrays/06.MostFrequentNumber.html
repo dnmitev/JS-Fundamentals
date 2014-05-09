@@ -17,37 +17,41 @@
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        var arr = new Array(20),
-            maxCount = 0,
-            currentCount,
-            target;
-
-        // assign the unsorted array with random values
-        for (var i = 0; i < arr.length; i++) {
-            arr[i] = parseInt(Math.random() * 10);
-        }
-
-        // print the unsorted array on the console
-        jsConsole.writeLine("Before sorting: " + arr.join("|"));
-
-        // look up for the most frequent element in the array
-        for (var i = 0; i < arr.length - 1; i++) {
-            currentCount = 0;
-
-            for (var j = 0; j < arr.length; j++) {
-                if (arr[i] === arr[j]) {
-                    currentCount++;
-                }
-            }
-
-            if (currentCount > maxCount) {
-                maxCount = currentCount;
-                target = arr[i];
-            }
-        }
-
-        // result
-        jsConsole.writeLine("Most frequent elements is: " + target + " (" + maxCount + " times)");
+		(function () {
+			"use strict";
+			
+			var arr = new Array(20),
+				maxCount = 0,
+				currentCount,
+				target;
+	
+			// assign the unsorted array with random values
+			for (var i = 0, len = arr.length; i < len; i++) {
+				arr[i] = parseInt(Math.random() * 10);
+			}
+	
+			// print the unsorted array on the console
+			jsConsole.writeLine("Before sorting: " + arr.join("|"));
+	
+			// look up for the most frequent element in the array
+			for (var i = 0, len = arr.length; i < len - 1; i++) {
+				currentCount = 0;
+	
+				for (var j = 0; j < len; j++) {
+					if (arr[i] === arr[j]) {
+						currentCount++;
+					}
+				}
+	
+				if (currentCount > maxCount) {
+					maxCount = currentCount;
+					target = arr[i];
+				}
+			}
+	
+			// result
+			jsConsole.writeLine("Most frequent elements is: " + target + " (" + maxCount + " times)");
+		}) ();
     </script>
 </body>
 </html>

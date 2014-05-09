@@ -14,19 +14,23 @@
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        var firstArr = [2,3,1,7,"b","m"],
-            secondArr = ["a", "2", "b", 2,3,1],
-            areEqual = true,
-            index;
-
-        for (index = 0; index < firstArr.length; index++) {
-            if (firstArr[index] !== secondArr[index]) {
-                areEqual = false;
-                break;
-            }
-        }
-
-        jsConsole.writeLine("Two arrays are lexicographically equal is " + areEqual);
+		(function () {
+			"use strict";
+			
+			var firstArr = [2,3,1,7,"b","m"],
+				secondArr = ["a", "2", "b", 2,3,1],
+				areEqual = true,
+				index;
+		
+			for (index = 0, len = firstArr.length; index < len; index++) {
+				if (firstArr[index] !== secondArr[index]) {
+					areEqual = false;
+					break;
+				}
+			}
+		
+			jsConsole.writeLine("Two arrays are lexicographically equal is " + areEqual);
+		}) ();
     </script>
 </body>
 </html>

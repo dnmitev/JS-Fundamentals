@@ -47,13 +47,14 @@
     </header>
     <label for="tb-numbers">Enter numbers, separated by comma ",": </label>
     <input id="tb-numbers" type="text" class="js-console-input" />
-    <a href="#" class="js-console-btn" onclick="onFindSequence()">Find max sequence of equal elements!</a>
+    <a href="#" class="js-console-btn" onclick="onFindSequenceClick()">Find max sequence of equal elements!</a>
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        function onFindSequence() {
+        function onFindSequenceClick() {
+			"use strict";
+			
             var arr = jsConsole.readNumbersArray("#tb-numbers", ","),
-                sequence = new Array(),
                 start = 0,
                 len = 1,
                 bestStart = 0,
@@ -63,7 +64,7 @@
             jsConsole.write("The array is: " + arr.join(",") + " -> ");
 
             // process the array in order to find the target sequence
-            for (var i = 0; i < arr.length; i++) {
+            for (var i = 0, len = arr.length; i < len; i++) {
                 var j = i;
                 start = arr[j];
                 len = 1;

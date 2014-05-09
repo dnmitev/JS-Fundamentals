@@ -16,30 +16,34 @@
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        var arr = new Array(20),
-            temp;
-
-        // assign the unsorted array with random values
-        for (var i = 0; i < arr.length; i++) {
-            arr[i] = parseInt(Math.random() * 100);
-        }
-
-        // print the unsorted array on the console
-        jsConsole.writeLine("Before sorting: " + arr.join("|"));
-
-        // selection sort
-        for (var i = 0; i < arr.length - 1; i++) {
-            for (var j = i; j < arr.length; j++) {
-                if (arr[j] < arr[i]) {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-        }
-
-        // after sorting
-        jsConsole.writeLine("After sorting: " + arr.join("|"));
+		(function () {
+			"use strict";
+			
+			var arr = new Array(20),
+				temp;
+	
+			// assign the unsorted array with random values
+			for (var i = 0, len = arr.length; i < len; i++) {
+				arr[i] = parseInt(Math.random() * 100);
+			}
+	
+			// print the unsorted array on the console
+			jsConsole.writeLine("Before sorting: " + arr.join("|"));
+	
+			// selection sort
+			for (var i = 0, len = arr.length; i < len - 1; i++) {
+				for (var j = i; j < arr.length; j++) {
+					if (arr[j] < arr[i]) {
+						temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+				}
+			}
+	
+			// after sorting
+			jsConsole.writeLine("After sorting: " + arr.join("|"));
+		}) ();
     </script>
 </body>
 </html>
