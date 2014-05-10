@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    var number = parseInt(Math.random()*1000),
+    var number = parseInt(Math.random() * 1000),
         reversedNumber = reverseDigits(number);
 
     function reverseDigits(number) {
@@ -17,4 +17,4 @@
     }
 
     jsConsole.writeLine(number + " -> " + reversedNumber);
-}) ();
+})();
