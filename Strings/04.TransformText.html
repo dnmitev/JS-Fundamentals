@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Strings - Task 4</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        header > p {
+            font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: #d0a1a1;
+        }
+
+        #sample {
+            font-size: 1.1em;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+            #sample span {
+                color: blue;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            04. You are given a text. Write a function that changes the text in all regions:
+        </p>
+        <ul>
+            <li>&lt;upcase&gt;text&lt;/upcase&gt; to uppercase.</li>
+            <li>&lt;lowcase&gt;text&lt;/lowcase&gt; to lowerercase.</li>
+            <li>&lt;mixcase&gt;text&lt;/mixcase&gt; to mixcase.</li>
+        </ul>
+        <p id="sample">
+            We are <span>&lt;mixcase&gt;</span>living<span>&lt;mixcase&gt;</span> in a <span>&lt;upcase&gt;</span>yellow submarine<span>&lt;/upcase&gt;</span>. We <span>&lt;mixcase&gt;</span>don't<span>&lt;/mixcase&gt;</span> have <span>&lt;lowcase&gt;</span>ANYTHING<span>&lt;/lowcase&gt;</span> else.
+        </p>
+    </header>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script src="04.TransformText.js"></script>
+</body>
+</html>
