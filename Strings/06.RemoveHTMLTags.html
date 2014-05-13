@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Strings - Task 6</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        header > p {
+            font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: #d0a1a1;
+        }
+
+        #sample {
+            font-size: 1.1em;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+            #sample span {
+                color: blue;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            06. Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
+        </p>
+        <p id="sample">
+            <span>&lt;html&gt;</span><span>&lt;head&gt;</span><span>&lt;title&gt;</span>Sample site<span>&lt;/title&gt;</span><span>&lt;/head&gt;</span><span>&lt;body&gt;</span><span>&lt;div&gt;</span>text<span>&lt;div&gt;</span>more text<span>&lt;/div&gt;</span>and more...<span>&lt;/div&gt;</span>in body<span>&lt;/body&gt;</span><span>&lt;/html&gt;</span>
+        </p>
+    </header>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script src="06.RemoveHTMLTags.js"></script>
+</body>
+</html>
