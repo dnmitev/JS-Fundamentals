@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Strings - Task 10</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        header > p {
+            font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: #d0a1a1;
+        }
+
+            header > p > span {
+                font-style: italic;
+                color: navy;
+            }
+
+        #sample {
+            font-size: 1.1em;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+            #sample span {
+                text-decoration: underline;
+            }
+
+                #sample span.correct {
+                    color: blue;
+                }
+
+                #sample span.incorrect {
+                    color: red;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            10. Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
+
+        </p>
+        <p id="sample">
+            There are words known as palindromes such as <span class="correct">ABBA</span> <span class="correct">lamal</span> <span class="correct">exe</span> and some words that look like palindromes but they are not, i.e. <span class="incorrect">ABAB</span> <span class="incorrect">BARMAR</span>
+        </p>
+    </header>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script src="10.Palindromes.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Strings - Task 9</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        header > p {
+            font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: #d0a1a1;
+        }
+
+            header > p > span {
+                font-style: italic;
+                color: navy;
+            }
+
+        #sample {
+            font-size: 1.1em;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+            #sample span {
+                text-decoration: underline;
+            }
+
+                #sample span.correct {
+                    color: blue;
+                }
+
+                #sample span.incorrect {
+                    color: red;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <p>
+            09. Write a function for extracting all email addresses from given text. All substrings that match the format <span>&lt;identifier&gt;</span>@<span>&lt;host&gt;</span>…<span>&lt;domain&gt;</span> should be recognized as emails. Return the emails as array of strings.
+        </p>
+        <p id="sample">
+            In this bloody text there are several email addresses like <span class="correct">dinko@abv.bg</span> or just like <span class="correct">pesho2@yahoo.co.uk</span> even emails like <span class="correct">zliq_shpek@tova-onova.eu</span>. Even Spinderman gave his email <span class="correct">spinder.man@facebook.bok</span> These emails should be extracted if they are correct not something like <span class="incorrect">ti-si.com</span> or <span class="incorrect">ti_ne_si@gmail</span> or <span class="incorrect">tova@com</span>
+        </p>
+    </header>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script src="09.ExtractEmails.js"></script>
+</body>
+</html>
