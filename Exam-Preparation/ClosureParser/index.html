@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Closure Parser</title>
+</head>
+<body>
+    <script src="ClosureParser.js"></script>
+    <script>
+        var test1 = [
+            '(+ 1 -11)'
+        ];
+
+        var test2 = [
+                '(def myFunc 5)',
+                '(def myNewFunc (+  myFunc  myFunc 2))',
+                '(def MyFunc (* 2  myNewFunc))',
+                '(/   MyFunc  myFunc)'
+        ];
+
+        var test3 = [
+            '(def func 10)',
+            '(def newFunc (+  func 2))',
+            '(def sumFunc (+ func func newFunc 0 0 0))',
+            '(* sumFunc 2)'
+        ];
+
+        var test4 = [
+            '(def func (+ 5 2))',
+            '(def func2 (/  func 5 2 1 0))',
+            '(def func3 (/ func 2))',
+            '(+ func3 func)'
+        ];
+
+        console.log(solve(test1)); // expected:
+        console.log(solve(test2)); // expected: 4
+        console.log(solve(test3)); // expected: 64
+        console.log(solve(test4)); // expected: Division by zero! At Line:2
+    </script>
+</body>
+</html>
