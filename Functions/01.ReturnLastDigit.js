@@ -33,5 +33,6 @@
     var number = parseInt((Math.random() * 1000), 10),
         lastDigit = nameLastDigit(number);
 
-    jsConsole.writeLine("The last digit of " + number + " is " + lastDigit);
+    // jsConsole.writeLine("The last digit of " + number + " is " + lastDigit);
+	console.log(lastDigit)
 })();
