@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Task 2</title>
+</head>
+<body>
+    <script src="Paths.js"></script>
+    <script>
+        var args1 = [
+            '3 5',
+            'dr dl dr ur ul',
+            'dr dr ul ur ur',
+            'dl dr ur dl ur'
+        ];
+
+        var args2 = [
+            '3 5',
+            'dr dl dl ur ul',
+            'dr dr ul ul ur',
+            'dl dr ur dl ur'
+        ];
+
+        console.log(solve(args1)); // expected: successed with 20
+        console.log(solve(args2)); // expected: failed at (1, 1)
+    </script>
+</body>
+</html>
